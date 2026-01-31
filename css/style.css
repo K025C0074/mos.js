@@ -1,17 +1,25 @@
-.ct-label{
-    font-size: 1rem;
-    fill: #fff;
+/* グラフ全体のサイズ設定 */
+.pie-chart {
+    height: 400px;
+    margin: 20px auto;
 }
 
-.ct-series-a .ct-slice-pie{
-    fill: #2d3374;
+/* ラベル（文字）の設定 */
+.ct-label {
+    font-size: 1.2rem;
+    fill: #fff; /* 文字色を白に */
 }
-.ct-series-b .ct-slice-pie{
-    fill: #3a7edf;
+
+/* グラフ各パーツの色設定（資料通りの4色） */
+.ct-series-a .ct-slice-pie {
+    fill: #2d3374; /* 濃い青 */
 }
-.ct-series-c .ct-slice-pie{
-    fill: #9bcdf8;
+.ct-series-b .ct-slice-pie {
+    fill: #007bc3; /* 青 */
 }
-.ct-series-d .ct-slice-pie{
-    fill: #bbb;
+.ct-series-c .ct-slice-pie {
+    fill: #87ceeb; /* 水色 */
+}
+.ct-series-d .ct-slice-pie {
+    fill: #bbb;    /* グレー */
 }
