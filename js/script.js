@@ -1,11 +1,28 @@
-new Chartist.Pie('.pie-chart', {
-  // 画像と同じラベル名を設定
-  labels: ['Webデザイナー', 'Webデベロッパー', 'サーバーエンジニア', '営業職'],
-  // グラフの割合（画像に基づいたおおよその比率）
-  series: [35, 25, 20, 20]
-}, {
-  // ラベルをグラフの内側に表示するための設定
+// グラフの詳細設定
+var data = {
+  labels: ['Bananas', 'Apples', 'Grapes'],
+  series: [20, 15, 40]
+};
+
+var options = {
   labelInterpolationFnc: function(value) {
-    return value;
+    return value[0];
   }
-});
+};
+
+var responsiveOptions = [
+  ['screen and (min-width: 640px)', {
+    chartPadding: 30,
+    labelOffset: 100,
+    labelDirection: 'explode',
+    labelInterpolationFnc: function(value) {
+      return value;
+    }
+  }],
+  ['screen and (min-width: 1024px)', {
+    labelOffset: 80,
+    chartPadding: 20
+  }]
+];
+
+new Chartist.Pie('#chart', data, options, responsiveOptions);
