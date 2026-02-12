@@ -1,28 +1,22 @@
-// グラフの詳細設定
-var data = {
-  labels: ['Bananas', 'Apples', 'Grapes'],
-  series: [20, 15, 40]
-};
+// 1. HTMLの要素を取得する
+const counterDisplay = document.getElementById('counter');
+const actionButton = document.getElementById('btn');
 
-var options = {
-  labelInterpolationFnc: function(value) {
-    return value[0];
-  }
-};
+// 2. カウントを保持する変数を準備
+let count = 0;
 
-var responsiveOptions = [
-  ['screen and (min-width: 640px)', {
-    chartPadding: 30,
-    labelOffset: 100,
-    labelDirection: 'explode',
-    labelInterpolationFnc: function(value) {
-      return value;
+// 3. ボタンがクリックされた時の動きを決める
+actionButton.addEventListener('click', () => {
+    // 数値を1増やす
+    count++; 
+    
+    // 画面上の数字を書き換える
+    counterDisplay.textContent = count;
+    
+    // ちょっとした遊び心：10回ごとに数字を跳ねさせる
+    if (count % 10 === 0) {
+        counterDisplay.style.color = '#2ed573';
+    } else {
+        counterDisplay.style.color = '#333';
     }
-  }],
-  ['screen and (min-width: 1024px)', {
-    labelOffset: 80,
-    chartPadding: 20
-  }]
-];
-
-new Chartist.Pie('#chart', data, options, responsiveOptions);
+});

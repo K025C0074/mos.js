@@ -1,25 +1,43 @@
-/* グラフ全体のサイズ設定 */
-.pie-chart {
-    height: 400px;
-    margin: 20px auto;
+/* 全体のレイアウト */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+    font-family: 'Arial', sans-serif;
 }
 
-/* ラベル（文字）の設定 */
-.ct-label {
-    font-size: 1.2rem;
-    fill: #fff; /* 文字色を白に */
+/* カード風のコンテナ */
+.container {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* グラフ各パーツの色設定（資料通りの4色） */
-.ct-series-a .ct-slice-pie {
-    fill: #2d3374; /* 濃い青 */
+/* 数字の部分 */
+#counter {
+    font-size: 6rem;
+    margin: 1rem 0;
+    color: #333;
 }
-.ct-series-b .ct-slice-pie {
-    fill: #007bc3; /* 青 */
+
+/* ボタンの装飾 */
+button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
 }
-.ct-series-c .ct-slice-pie {
-    fill: #87ceeb; /* 水色 */
-}
-.ct-series-d .ct-slice-pie {
-    fill: #bbb;    /* グレー */
+
+button:active {
+    transform: scale(0.95); /* 押した時に少し小さくなる */
+    background-color: #e84118;
 }
